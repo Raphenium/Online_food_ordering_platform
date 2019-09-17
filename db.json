@@ -1,0 +1,83 @@
+{
+  "event": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "venue": "typicode",
+      "date": "21/09/2019 TM 04:00 pm"
+    },
+    {
+      "title": "",
+      "venue": "",
+      "date": "",
+      "id": 2
+    },
+    {
+      "title": "gbenga",
+      "venue": "",
+      "date": "",
+      "id": 3
+    },
+    {
+      "title": "gbenga",
+      "venue": "olawola",
+      "date": "",
+      "id": 4
+    },
+    {
+      "title": "gbenga",
+      "venue": "olawola",
+      "date": "21/09/2019",
+      "id": 5
+    },
+    {
+      "title": "gbenga",
+      "venue": "olawola",
+      "date": "21/09/2019",
+      "id": 6
+    },
+    {
+      "title": "",
+      "venue": "olawola",
+      "date": "21/09/2019",
+      "id": 7
+    },
+    {
+      "title": "",
+      "venue": "",
+      "date": "21/09/2019",
+      "id": 8
+    },
+    {
+      "title": "",
+      "venue": "",
+      "date": "",
+      "id": 9
+    },
+    {
+      "title": "Mandong",
+      "venue": "",
+      "date": "",
+      "id": 10
+    },
+    {
+      "title": "Mandong",
+      "venue": "Mark",
+      "date": "",
+      "id": 11
+    },
+    {
+      "title": "Mandong",
+      "venue": "Mark",
+      "date": "21/09/2019",
+      "id": 12
+    }
+  ],
+  "attendees": [
+    {
+      "id": 1,
+      "email": "gbengar36@gmail.com",
+      "phone": "08100127377"
+    }
+  ]
+}

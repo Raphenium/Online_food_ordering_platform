@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WELCOME</h1>
+    <form action="">
+        <label for="title">Title
+            <input type="text" name ="title" id = "title">
+        </label><br>
+
+        <label for="venue">venue
+            <input type="text" name ="venue" id = "venue">
+        </label><br>
+
+        <label for="date">Date
+            <input type="text" name ="title" id = "date">
+        </label><br>
+
+        <button type = "submit">Submit</button>
+    </form>
+
+    <script src = "./jquery-3.4.1.js"></script>
+<script>
+$(document).ready(function(){
+    let title = $('#title').val();
+    let venue = $('#venue').val();
+    let date = $('#date').val();
+
+    $('h1').on('click', function(){
+        alert(title);
+    })
+})
+
+$(document).ready(function(){
+    $('form').on('click', function(e){
+    e.preventDefault();
+    let title = $('#title').val();
+    let venue = $('#venue').val();
+    let date = $('#date').val();
+    $.ajax({
+url:"http://localhost:3000/event",
+success:function(result){
+    console.log(result)
+},
+method:"POST",
+data:{
+    title,
+    venue,
+    date
+},
+    })
+})
+})
+</script>
+</body>
+</html>

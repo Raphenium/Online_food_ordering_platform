@@ -1,0 +1,30 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "name": "Gbenga",
+        "PhoneNo": "08100127377",
+        "Email": "Gbengar36@gmail.com",
+        "isAdmin": true
+        
+      }
+    ],
+      "food": [
+          {
+            "id": 1,
+            "food_name": "Rice",
+            "quantity": "2pounds",
+            "image":"image url"
+
+      }
+    ],
+    "order" : [
+        {
+            "id": 1,
+             "food_Id":1,
+            "user_id":1
+        }
+    ]   
+
+
+}
