@@ -1,0 +1,65 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-size: 120%;
+	background:  #F8F8FF;
+}
+.header {
+	width: 60%;
+	margin: 30px auto auto;
+	background: #5F9EA0;
+	color: white;
+	padding: 20px;
+	border: 1px solid #B0C4DE;
+	border-radius: 10px 10px 0px 0px;
+	border-bottom: none;
+	text-align: center;
+}
+form {
+	width: 40%;
+	background: white;
+	margin: 0px auto;
+	border-radius: 0px 0px 0px 0px;
+	padding: 20px;
+	border: 1px solid #B0C4DE;
+}
+.User{
+margin: 10px 0px 10px 0px;
+}
+.User label {
+	display: block;
+	margin: 3px;
+	text-align: left;
+}
+.User input {
+	width: 93%;
+	height: 30px;
+	font-size: 20px;
+	padding: 5px 10px;
+	border: 1px solid grey;
+}
+.btn {
+	padding: 5px 3px;
+	background: green;
+	border-radius: 5px;
+	font-size: 15px;
+	border: none;
+	color: white;
+	margin: 10px 0px 0px 330px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

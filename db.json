@@ -37,7 +37,14 @@
       "food_name": "Rice",
       "quantity": "2pounds",
       "status": true,
-      "image": "image url"
+      "amount": "1000"
+    },
+    {
+      "food_name": "Beans",
+      "quantity": "50",
+      "amount": "5000",
+      "status": "true",
+      "id": 2
     }
   ],
   "order": [
