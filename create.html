@@ -12,60 +12,83 @@
 </head>
 <body>
     <h1>WELCOME TAG</h1>
-<div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card col-md-12">
-                    <div class="card-header" style="background-color:purple; color:white; font-size:23px;">Create New Food</div>
-                    <form class = "col-md-12">
+
+            
+                    <div class="card-header col-md-8" style="margin-left:228px; text-align:justify; background-color:purple; color:white; font-size:23px;">Create New Food</div>
+                    <form class = "col-md-8">
                     <div class="card-body col-md-12">
                     <div class="col-md-12" style="margin-bottom:20px; color:green; font-size:20px; text-align:justify;"></div>
                         <div style="margin-bottom:14px; color:black; font-size:18px; color:green; font-size:18px;">
-                            <label for="present_location" class="col-md-12 control-label" name="present_location" id = "">Your Present Location</label>
+                            <label for="food_name" class="col-md-12 control-label" name="food_name" id = "">Food Name</label>
     
                             <div class="col-md-12">
-                                <input id="present_location" type="text" class="form-control" name="present_location">
+                                <input type="text" class="form-control" name="food_name" id = "food_name">
                             </div>
                         </div>
     
                         <div style="margin-bottom:14px; color:black; font-size:18px;">
-                            <label for="city" class="col-md-12 control-label" name="city">City</label>
+                            <label for="quantity" class="col-md-12 control-label" name="quantity">Quantity</label>
     
                             <div class="col-md-12">
-                                <input id="city" type="text" class="form-control" name="city">
+                                <input type="text" class="form-control" name="quantity" id = "quantity">
                             </div>
                         </div> 
     
                         <div style="margin-bottom:14px; color:black; font-size:18px;">
-                            <label for="property_type" class="col-md-12 control-label" name="property_type">What type of property do you intend to verify?</label>
-    
-                            <div class="form-check col-md-12" style="margin-left:15px; margin-bottom:16;">
-                            <input type="radio" class="form-check-input" id="property_type" name="property_type" value="Building">
-                            <label class="form-check-label" for="property_type">Building</label>
+                            <label for="amount" class="col-md-12 control-label" name="amount">Amount per unit quantity</label>
+                            <div class="col-md-12">
+                            <input type="text" class="form-control" id="amount" name="amount">
                             </div>
-    
-                            <!-- Group of material radios - option 2 -->
-                            <div class="form-check" style="margin-left:15px; margin-bottom:16;">
-                            <input type="radio" class="form-check-input" id="property_type" name="property_type" value="Land">
-                            <label class="form-check-label" for="property_type">Land</label>
-                            </div>
-    
-                            <!-- Group of material radios - option 3 -->
-                            <div class="form-check" style="margin-left:15px; margin-bottom:16;">
-                            <input type="radio" class="form-check-input" id="property_type" name="property_type" value="Land and Building">
-                            <label class="form-check-label" for="property_type">Land and Building</label>
-                            </div>
-    
-                            <div class="form-check" style="margin-left:15px; margin-bottom:16;"> 
-                            <input type="radio" class="form-check-input" id="property_type" name="property_type" value="Other">
-                            <label class="form-check-label" for="property_type">Other</label>
-                            </div>
-                        </div>
                     </div>
+
+                            
+                    <div class="col-md-12" style = "margin-left: 450px;">
+                            <button type="submit" class="btn" style="background-color:purple; color:white;">CREATE</button>                             
+                    </div> 
+
+                    <script src = "./jquery-3.4.1.js"></script>
+<script>
+$(document).ready(function(){
+    $('form').on('submit', function(e){
+    e.preventDefault();
+    let food_name = $('#food_name').val();
+    let quantity = $('#quantity').val();
+    let amount = $('#amount').val();
+    
+    
+    $.ajax({
+url:"http://localhost:3000/food?food_name="+food_name,
+success:function(result){
+    console.log(result);
+    if(result.length){
+        return alert("You have created this food before, you only need to update it")
+    }else{
+        $.ajax({
+url:"http://localhost:3000/food",
+success:function(result){
+    console.log(result)
+},
+method:"POST",
+data:{
+    food_name,
+    quantity,
+    amount,
+    "status":true
+},
+    });
+    }
+    },
+
+method:"GET"
+})
+})
+
+})
+</script>
+
                     </form>
                 </div>
-            </div>
-        </div>
-    </div>
+                    
+            
     </body>
 </html>
