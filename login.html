@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div class="header">
+	<h1> LOGIN </h1>
+</div>
+<form>
+<div class="User">
+	<label>Email</label>
+	<input type="text" name="email" id = "email">
+</div>
+<div class="User">
+	<label>Password</label>
+	<input type="password" name="password_1" id = "password_1">
+</div>
+<div class="User">
+	<button type="submit" name="submit" class="btn" id = "submit">LOGIN</button>
+</div>
+<p>
+	Not a member yet? <a href="index.html">Sign up</a>
+</p>
+</form>
+<script src = "./jquery-3.4.1.js"></script>
+<script>
+$(document).ready(function(){
+        $('#submit').on('click',function(e){
+            e.preventDefault();
+            //lets create our variables
+            let email = $('#email').val();
+			let password_1 = $('#password_1').val();
+                 $.ajax({
+					 url:`http://localhost:3000/users?email=${email}&password_1=${password_1}`,
+                     success:function(user){
+                         if(user.length){
+						  const data = user[0];
+						  console.log(data  )
+
+                              if(data.isAdmin === true || data.isAdmin === 'true'){
+								  localStorage.clear()
+                                localStorage.setItem('user',data.id);
+                                localStorage.setItem('firstName',data.firstName);
+                                // localStorage.userData=;
+                                window.location = "./admin.html"
+                              }else{
+                                // return alert(data.firstName);
+                                //let remove for every new login session before setting
+								localStorage.removeItem(data);
+								localStorage.userData = user[0].id;
+                                localStorage.userData = user[0].firstName;
+                                console.log(localStorage.userData)
+                                window.location = "./user.html"
+                              }
+                            
+						}else{
+                         return     alert("Invalid email or password");
+                          }
+                          
+					 },
+					 method:"GET",
+                 });
+                
+          
+        });
+    });
+</script>
+</body>
+</html>
