@@ -5,57 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <title>Document</title>
+    <title>Food Ordering Platform</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>WELCOME</h1>
     <form action="">
-        <label for="title">Title
-            <input type="text" name ="title" id = "title">
-        </label><br>
+        <div class="header">
+            <h1>REGISTER HERE</h1>	
+            </div>
+        
+        <div class="User">
+            <label>First Name</label>
+            <input type="text" name="firstName" id = "firstName">
+        </div>
+        
+        <div class="User">
+            <label>Last Name</label>
+            <input type="text" name="lastName" id = "lastName">
+        </div>
 
-        <label for="venue">venue
-            <input type="text" name ="venue" id = "venue">
-        </label><br>
+        <div class="User">
+            <label>Email</label>
+            <input type="text" name="email" id = "email">
+        </div>
 
-        <label for="date">Date
-            <input type="text" name ="title" id = "date">
-        </label><br>
+        <div class="User">
+            <label>Phone Number</label>
+            <input type="text" name="phoneNumber" id = "phoneNumber">
+        </div>
+        
+        <div class="User">
+            <label>Password</label>
+            <input type="password" name="password_1" id = "password_1">
+        </div>
 
-        <button type = "submit">Submit</button>
+        <div class="User">
+            <label>Password</label>
+            <input type="password" name="password_2" id = "password_2">
+        </div>
+        
+        
+        <div class="User">
+            <button type="submit" name="submit" class="btn">Register</button>
+        </div>
+        <p>
+            Already a registered? <a href="login.html">Login here</a> 
+        </p>
     </form>
 
     <script src = "./jquery-3.4.1.js"></script>
 <script>
 $(document).ready(function(){
-    let title = $('#title').val();
-    let venue = $('#venue').val();
-    let date = $('#date').val();
-
-    $('h1').on('click', function(){
-        alert(title);
-    })
-})
-
-$(document).ready(function(){
-    $('form').on('click', function(e){
+    $('form').on('submit', function(e){
     e.preventDefault();
-    let title = $('#title').val();
-    let venue = $('#venue').val();
-    let date = $('#date').val();
+    let firstName = $('#firstName').val();
+    let lastName = $('#lastName').val();
+    let email = $('#email').val();
+    let phoneNumber = $('#phoneNumber').val();
+    let password_1 = $('#password_1').val();
+    let password_2 = $('#password_1').val();
+    
     $.ajax({
-url:"http://localhost:3000/event",
+url:"http://localhost:3000/users?email="+email,
+success:function(result){
+    console.log(result);
+    if(result.length){
+        return alert("You have created an account before")
+    }else{
+        $.ajax({
+url:"http://localhost:3000/users",
 success:function(result){
     console.log(result)
 },
 method:"POST",
 data:{
-    title,
-    venue,
-    date
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    password_1,
+    password_1,
+    "isAdmin":false
 },
-    })
+    });
+    }
+    },
+
+method:"GET"
 })
+})
+
 })
 </script>
 </body>

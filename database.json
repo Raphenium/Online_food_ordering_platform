@@ -2,9 +2,13 @@
     "users": [
       {
         "id": 1,
-        "name": "Gbenga",
-        "PhoneNo": "08100127377",
+        "firstName": "Gbenga",
+        "lastName": "08100127377",
         "Email": "Gbengar36@gmail.com",
+        "phoneNumber": "08100127377",
+        "address": "erinmope",
+        "password_1": "raph",
+        "password_2": "raph",
         "isAdmin": true
         
       }
@@ -21,8 +25,8 @@
     "order" : [
         {
             "id": 1,
-             "food_Id":1,
-            "user_id":1
+             "food_Id": 1,
+            "user_id": 1
         }
     ]   
 
