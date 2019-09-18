@@ -33,17 +33,15 @@
   ],
   "food": [
     {
-      "id": 1,
       "food_name": "Rice",
-      "quantity": "2pounds",
-      "status": true,
-      "amount": "1000"
+      "quantity": "70",
+      "amount": "60000",
+      "id": 1
     },
     {
       "food_name": "Beans",
       "quantity": "50",
-      "amount": "5000",
-      "status": "true",
+      "amount": "500",
       "id": 2
     }
   ],
