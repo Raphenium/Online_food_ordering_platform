@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
+    
+    <title>Food Ordering Platform</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>SHOW TAG</h1>
+
+    <div>
+            <table class="table table-striped m-2 p-3" id="employeesTable">
+              <thead>
+                <tr>
+                  
+                  <th scope="col">FIRST NAME</th>
+                  <th scope="col">LAST NAME</th>
+                  <th scope="col">EMAIL</th>
+                  <th scope="col">ADDRESS</th>
+                  <th scope="col">FOOD NAME</th>
+                  <th scope="col">ORDERED QUANTITY</th>
+                  <th scope="col">TOTAL PRICE</th>
+                </tr>
+              </thead>
+              <tbody class="table-body">
+
+              </tbody>
+            </table>
+          </div>
+          <script src = "./jquery-3.4.1.js"></script>
+          <script>
+          $.ajax({
+    url: "http://localhost:4000/order", success: function(result){
+      result.forEach(order =>{
+          console.log(result);
+          if(order.newQuantity > 0){
+        $(".table-body").append(
+          `
+        <tr>
+        <td>${order.firstName}</td>
+        <td>${order.lastName}</td>
+        <td>${order.user_email}</td>
+        <td>${order.address}</td>
+        <td>${order.food_name}</td>
+        <td>${order.newQuantity}</td>
+        <td>${order.total_price}</td>
+        
+    
+        <td><button class="del" data-id=${order.id}>Delete</button></td>
+        </tr>
+        `
+        );
+    }
+      })
+      //add delete function to my delete button
+      $('.del').on('click',function(e){
+                               //console.log(e.target.dataset.id)
+                               //confirm before deleting
+                               if(confirm("Sure you want to delete food?")){
+                                $.ajax({
+                            url:"http://localhost:4000/order/"+e.target.dataset.id,success:function(result){
+                                // console.log(result)
+                               
+                            },
+                            method: "DELETE",
+                              });
+                               }
+    })
+    },
+    method: "GET"
+    
+  })
+          </script>
+        </body>
+        </html>
+                
+
+
+
+
+
+
+
+
+
+
+

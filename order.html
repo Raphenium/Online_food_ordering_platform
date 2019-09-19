@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
+    
+    <title>Food Ordering Platform</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>WELCOME TAG</h1>
+
+            
+                    <div class="card-header col-md-8" style="margin-left:228px; text-align:justify; background-color:purple; color:white; font-size:23px;">Order for Food</div>
+                    <form class = "col-md-8" id = "form">
+                    
+
+                    
+
+                    </form>
+                </div> 
+                <script src = "./jquery-3.4.1.js"></script>
+                <script>
+                    
+                    function myFunc(e){
+                    console.log(e)
+                }
+                const urlParams = new URLSearchParams(window.location.search);
+                $(document).ready(function(){
+                    
+                    
+                    $('#form').html(`<div class="card-body col-md-12">
+                    <div class="col-md-12" style="margin-bottom:20px; color:green; font-size:20px; text-align:justify;"></div>
+                        <div style="margin-bottom:14px; color:black; font-size:18px; color:green; font-size:18px;">
+                            <label for="food_name" class="col-md-12 control-label" name="food_name" id = "">Food Name</label>
+    
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" name="food_name"  value="${urlParams.get('name')}" id = "food_name">
+                            </div>
+                        </div>
+    
+                        <div style="margin-bottom:14px; color:black; font-size:18px;">
+                            <label for="newQuantity" class="col-md-12 control-label" name="newQuantity">Quantity</label>
+    
+                            <div class="col-md-12">
+                                <input type="number" class="form-control" name="newQuantity" id = "newQuantity">
+                            </div>
+                        </div> 
+    
+                        <div style="margin-bottom:14px; color:black; font-size:18px;">
+                            <label for="address" class="col-md-12 control-label" name="address">Your Address</label>
+                            <div class="col-md-12">
+                            <input type="text" class="form-control" id="address" name="address">
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom:14px; color:black; font-size:18px;">
+                            <label for="amount" class="col-md-12 control-label" name="amount">Amount per unit quantity</label>
+                            <div class="col-md-12">
+                            <input type="text" class="form-control" id="amount" name="amount" value="${urlParams.get('amount')}" >
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom:14px; color:black; font-size:18px;">
+                            <label for="total_amount" class="col-md-12 control-label" name="total_amount">Total Amount</label>
+                            <div class="col-md-12">
+                            <input type="text" class="form-control" id="total_amount" name="total_amount">
+                            </div>
+                    </div>
+
+                            
+                    <div class="col-md-12" style = "margin-left: 450px;">
+                            <button type="submit" class="btn" style="background-color:purple; color:white;" data-toggle ="modal" data-target="#modal">Order</button>                             
+                    </div>`)
+                })
+
+              //  $('#newQuantity').on('click', function myFunc(){console.log(urlParams.get('newQuantity'))})
+
+              //onkeyup="myFunc(console.log(${urlParams.get('quantity')}))" value="${urlParams.get('newQuantity')}"
+
+                $('form').on('submit', function(e){
+    e.preventDefault();
+    let address = $('#address').val();
+    let newQuantity = $('#newQuantity').val();
+    let total_price = $('#total_price').val();
+    let name = urlParams.get('name')
+    let amount = urlParams.get('amount')
+    let total_amount = amount * newQuantity
+    let user_email = localStorage.email
+    let firstName = localStorage.firstName
+    let lastName = localStorage.lastName
+    let food_name = $('#food_name').val();
+                    let quantity;
+                   
+                    
+                    
+                    $.ajax({
+                url:"http://localhost:4000/food?food_name="+name,
+                success:function(result){
+                   
+                     $.ajax({
+                url:"http://localhost:4000/food/"+result[0].id,
+                success:function(result){
+                    quantity = result.quantity
+                    if(parseInt(newQuantity) > parseInt(quantity)){
+        return alert("The Quantity ordered is higher than the quantity available. Please re-order and make sure your order quantity is lower than available quantity")
+    }
+                },
+                method:"PUT",
+                data:{
+                    food_name:name,
+                    quantity:parseInt(result[0].quantity)-parseInt(newQuantity),
+                    amount:result[0].amount
+                },
+                    });
+                    },
+                
+                method:"GET"
+                })
+   
+//         $.ajax({
+// url:"http://localhost:4000/order",
+// success:function(res){
+//     console.log(res)
+//     let array = [name, newQuantity, total_amount]
+//     alert("Order Successful! you have ordered " + array[1] + " pounds of " + array[0] +" and your total amount is " + array[2] + " Naira");
+// },
+// method:"POST",
+// data:{
+    
+//     food_name:name,
+//       user_email,
+//       total_price:total_amount,
+//       newQuantity,
+//       address,
+//       firstName,
+//       lastName
+    
+// },
+//     });
+    //add Hi Username, thankyou for placing an order we will deliver your order shortly.
+
+   
+                    
+                    
+                
+                
+            
+
+
+
+
+
+    
+    
+})
+    
+
+
+                
+            </script>          
+            
+        </body>
+    </html>
