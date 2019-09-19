@@ -3,7 +3,7 @@
     {
       "id": 1,
       "firstName": "Gbenga",
-      "lastName": "08100127377",
+      "lastName": "olayiwola ",
       "email": "gbengar36@gmail.com",
       "phoneNumber": "08100127377",
       "password_1": "raph",
@@ -33,23 +33,152 @@
   ],
   "food": [
     {
-      "food_name": "Rice",
-      "quantity": "70",
-      "amount": "60000",
-      "id": 1
-    },
-    {
       "food_name": "Beans",
-      "quantity": "50",
+      "quantity": "-5",
       "amount": "500",
       "id": 2
+    },
+    {
+      "food_name": "beansyam",
+      "quantity": "-10",
+      "amount": "5000",
+      "id": 3
+    },
+    {
+      "food_name": "tuwo",
+      "quantity": "100",
+      "amount": "5000",
+      "id": 4
     }
   ],
   "order": [
     {
       "id": 1,
-      "food_Id": 1,
-      "user_id": 1
+      "food_name": "Tuwo Shinkafa",
+      "user_email": "our@gmail.com",
+      "total_price": "1000",
+      "newQuantity": "20",
+      "address": "Ojota",
+      "firstName": "oga",
+      "lastName": "our"
+    },
+    {
+      "food_name": "Beans",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "27000",
+      "newQuantity": "54",
+      "address": "Okota",
+      "id": 4
+    },
+    {
+      "food_name": "Beans",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "49000",
+      "newQuantity": "98",
+      "address": "OJIR",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 5
+    },
+    {
+      "food_name": "Beans",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "10000",
+      "newQuantity": "20",
+      "address": "ikare",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 6
+    },
+    {
+      "food_name": "Beans",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "17500",
+      "newQuantity": "35",
+      "address": "ohg",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 7
+    },
+    {
+      "food_name": "beansyam",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "350000",
+      "newQuantity": "70",
+      "address": "gh",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 8
+    },
+    {
+      "food_name": "tuwo",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "390000",
+      "newQuantity": "78",
+      "address": "idimu",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 9
+    },
+    {
+      "food_name": "tuwo",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "450000",
+      "newQuantity": "90",
+      "address": "kola",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 10
+    },
+    {
+      "food_name": "tuwo",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "500000",
+      "newQuantity": "100",
+      "address": "jdas",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 11
+    },
+    {
+      "food_name": "tuwo",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "500000",
+      "newQuantity": "100",
+      "address": "",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 12
+    },
+    {
+      "food_name": "tuwo",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "500000",
+      "newQuantity": "100",
+      "address": "",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 13
+    },
+    {
+      "food_name": "tuwo",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "600000",
+      "newQuantity": "120",
+      "address": "",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 14
+    },
+    {
+      "food_name": "tuwo",
+      "user_email": "gbengar36@gmail.com",
+      "total_price": "600000",
+      "newQuantity": "120",
+      "address": "",
+      "firstName": "Gbenga",
+      "lastName": "08100127377",
+      "id": 15
     }
   ]
 }

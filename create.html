@@ -57,14 +57,14 @@ $(document).ready(function(){
     
     
     $.ajax({
-url:"http://localhost:3000/food?food_name="+food_name,
+url:"http://localhost:4000/food?food_name="+food_name,
 success:function(result){
     console.log(result);
     if(result.length){
         return alert("You have created this food before, you only need to update it")
     }else{
         $.ajax({
-url:"http://localhost:3000/food",
+url:"http://localhost:4000/food",
 success:function(result){
     console.log(result)
 },

@@ -19,8 +19,10 @@
                 <tr>
                   
                   <th scope="col">FOOD NAME</th>
-                  <th scope="col">FOOD QUANTITY</th>
-                  <th scope="col">AMOUNT</th>
+                  <th scope="col">PRICE PER UNIT</th>
+                  <th scope="col">QUANTITY ORDERED</th>
+                  <th scope="col">ADDRESS</th>
+                  <th scope="col">TOTAL AMOUNT</th>
                 </tr>
               </thead>
               <tbody class="table-body">
@@ -32,9 +34,6 @@
           <script>
           $.ajax({
     url: "http://localhost:4000/food", success: function(result){
-
-
-        
       result.forEach(food =>{
           console.log(result);
           if(food.quantity > 0){
@@ -46,7 +45,7 @@
         <td>${food.amount}</td>
         <td><a href="edit.html?name=${food.food_name}&quantity=${food.quantity}&amount=${food.amount}&id=${food.id}"><button type="submit">UPDATE</button></a></td>
         <td><button class="del" data-id=${food.id}>Delete</button></td>
-        <td><a href="order.html?name=${food.food_name}&amount=${food.amount}"><button data-id=${food.id}>ORDER</button></a></td>
+        <td><a href="order.html?name=${food.food_name}&amount=${food.amount}&newQuantity=${food.newQuantity}"><button data-id=${food.id}>ORDER</button></a></td>
         </tr>
         `
         );

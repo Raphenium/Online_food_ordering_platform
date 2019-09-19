@@ -33,7 +33,7 @@ $(document).ready(function(){
             let email = $('#email').val();
 			let password_1 = $('#password_1').val();
                  $.ajax({
-					 url:`http://localhost:3000/users?email=${email}&password_1=${password_1}`,
+					 url:`http://localhost:4000/users?email=${email}&password_1=${password_1}`,
                      success:function(user){
                          if(user.length){
 						  const data = user[0];
@@ -42,15 +42,19 @@ $(document).ready(function(){
                               if(data.isAdmin === true || data.isAdmin === 'true'){
 								  localStorage.clear()
                                 localStorage.setItem('user',data.id);
-                                localStorage.setItem('firstName',data.firstName);
+								localStorage.setItem('firstName',data.firstName);
+								localStorage.setItem('lastName',data.lastName);
+								localStorage.setItem('email',data.email);
                                 // localStorage.userData=;
                                 window.location = "./admin.html"
                               }else{
                                 // return alert(data.firstName);
                                 //let remove for every new login session before setting
 								localStorage.removeItem(data);
-								localStorage.userData = user[0].id;
-                                localStorage.userData = user[0].firstName;
+								localStorage.id = user[0].id;
+								localStorage.firstName = user[0].firstName;
+								localStorage.lastName = user[0].lastName;
+								localStorage.email = user[0].email;
                                 console.log(localStorage.userData)
                                 window.location = "./user.html"
                               }
