@@ -43,8 +43,8 @@
         <td>${food.food_name}</td>
         <td>${food.quantity}</td>
         <td>${food.amount}</td>
-        <td><a href="edit.html?name=${food.food_name}&quantity=${food.quantity}&amount=${food.amount}&id=${food.id}"><button type="submit">UPDATE</button></a></td>
-        <td><button class="del" data-id=${food.id}>Delete</button></td>
+        <td><a href="edit.html?name=${food.food_name}&quantity=${food.quantity}&amount=${food.amount}&id=${food.id}"><button type="submit" class="btn btn-primary btn-success">UPDATE</button></a></td>
+        <td><button class="btn btn-primary btn-danger" data-id=${food.id}>Delete</button></td>
         <td><a href="order.html?name=${food.food_name}&amount=${food.amount}&newQuantity=${food.newQuantity}"><button data-id=${food.id}>ORDER</button></a></td>
         </tr>
         `
@@ -52,7 +52,7 @@
     }
       })
       //add delete function to my delete button
-      $('.del').on('click',function(e){
+      $('.btn').on('click',function(e){
                                //console.log(e.target.dataset.id)
                                //confirm before deleting
                                if(confirm("Sure you want to delete food?")){

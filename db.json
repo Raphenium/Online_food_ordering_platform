@@ -46,30 +46,31 @@
     },
     {
       "food_name": "tuwo",
-      "quantity": "100",
+      "quantity": "-901",
       "amount": "5000",
       "id": 4
+    },
+    {
+      "food_name": "pancake",
+      "quantity": "-230",
+      "amount": "5667",
+      "id": 5
+    },
+    {
+      "food_name": "masa",
+      "quantity": "80",
+      "amount": "60000",
+      "status": "true",
+      "id": 6
+    },
+    {
+      "food_name": "wine",
+      "quantity": "1000",
+      "amount": "8000",
+      "id": 7
     }
   ],
   "order": [
-    {
-      "id": 1,
-      "food_name": "Tuwo Shinkafa",
-      "user_email": "our@gmail.com",
-      "total_price": "1000",
-      "newQuantity": "20",
-      "address": "Ojota",
-      "firstName": "oga",
-      "lastName": "our"
-    },
-    {
-      "food_name": "Beans",
-      "user_email": "gbengar36@gmail.com",
-      "total_price": "27000",
-      "newQuantity": "54",
-      "address": "Okota",
-      "id": 4
-    },
     {
       "food_name": "Beans",
       "user_email": "gbengar36@gmail.com",
@@ -179,6 +180,26 @@
       "firstName": "Gbenga",
       "lastName": "08100127377",
       "id": 15
+    },
+    {
+      "food_name": "pancake",
+      "user_email": "you@gmail.com",
+      "total_price": "170010",
+      "newQuantity": "30",
+      "address": "Erinmope",
+      "firstName": "oga",
+      "lastName": "you",
+      "id": 16
+    },
+    {
+      "food_name": "pancake",
+      "user_email": "you@gmail.com",
+      "total_price": "1700100",
+      "newQuantity": "300",
+      "address": "Erinmope",
+      "firstName": "oga",
+      "lastName": "you",
+      "id": 17
     }
   ]
 }
