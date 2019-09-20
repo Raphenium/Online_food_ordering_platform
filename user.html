@@ -6,15 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <title>Food Ordering Platform</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>WELCOME USER</h1>
+        <nav class="navbar sticky-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="#"><h2>DEV/FOOD</h2></a>
+                <a class="navbar-brand" href="./read_all_food.html" style = "margin-left: 150px;">See available food</a>
+                <a class="navbar-brand" href="./show.html">Preview available food</a>
+                <a class="navbar-brand" href="./show_all_orders.html">Show all orders</a>
+                <a class="navbar-brand" href="#"><h4>WELCOME TAG</h4></a>
+                <button type="submit" name="submit" class="btn btn-primary btn-success"><a href="login.html"style = "color: white;">LOGOUT</a></button>
+        </nav>
+
+
+    
     <script src = "./jquery-3.4.1.js"></script>
     <script>
         
-            let firstName = localStorage.userData;
-            $('h1').html("welcome" + " " + firstName);
+            let firstName = localStorage.firstName;
+            $('h4').html("Welcome" + " user" + " " + firstName);
         
     </script>
 </body>

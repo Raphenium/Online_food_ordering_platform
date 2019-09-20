@@ -8,10 +8,26 @@
     <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
     
     <title>Food Ordering Platform</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>SHOW TAG</h1>
+        
+   
+            <nav class="navbar sticky-top navbar-dark bg-dark">
+                    <a class="navbar-brand" href="#"><h2>DEV/FOOD</h2></a>
+                    <a class="navbar-brand" href="./create.html" style = "margin-left: 150px;">Create Food to Stock</a>
+                    <a class="navbar-brand" href="./show.html">Preview available food</a>
+                    <a class="navbar-brand" href="#"><h4>WELCOME TAG</h4></a>
+                    <button type="submit" name="submit" class="btn btn-primary btn-success"><a href="login.html"style = "color: white;">LOGOUT</a></button>
+            </nav>
+            
+            <script src = "./jquery-3.4.1.js"></script>
+            <script>
+                
+                    let firstName = localStorage.firstName;
+                    $('h4').html("Welcome" + " admin" + " " + firstName);
+                
+            </script>
 
     <div>
             <table class="table table-striped m-2 p-3" id="employeesTable">
@@ -51,14 +67,14 @@
         <td>${order.total_price}</td>
         
     
-        <td><button class="del" data-id=${order.id}>Delete</button></td>
+        <td><button class="btn btn-primary btn-danger" data-id=${order.id}>Delete</button></td>
         </tr>
         `
         );
     }
       })
       //add delete function to my delete button
-      $('.del').on('click',function(e){
+      $('.btn-danger').on('click',function(e){
                                //console.log(e.target.dataset.id)
                                //confirm before deleting
                                if(confirm("Sure you want to delete food?")){

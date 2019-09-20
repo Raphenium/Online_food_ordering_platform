@@ -8,18 +8,33 @@
     <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
     
     <title>Food Ordering Platform</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>WELCOME TAG</h1>
+        
+    
+            <nav class="navbar sticky-top navbar-dark bg-dark">
+                    <a class="navbar-brand" href="#"><h2>DEV/FOOD</h2></a>
+                    <a class="navbar-brand" href="./show.html">Preview available food</a>
+                    <a class="navbar-brand" href="./show_all_orders.html">Show all orders</a>
+                    <a class="navbar-brand" href="#"><h5>WELCOME TAG</h5></a>
+                    <button type="submit" name="submit" class="btn btn-primary btn-success"><a href="login.html"style = "color: white;">LOGOUT</a></button>
+            </nav>
+    
+        
+        <script src = "./jquery-3.4.1.js"></script>
+        <script>
+            
+                let firstName = localStorage.firstName;
+                $('h5').html("Hi" + " " + firstName + " You can create a new food here, just click on the create button");
+            
+        </script>
 
             
-                    <div class="card-header col-md-8" style="margin-left:228px; text-align:justify; background-color:purple; color:white; font-size:23px;">Create New Food</div>
-                    <form class = "col-md-8" id = "form">
+                    <div class="card-header col-md-6" style="margin-left:340px; text-align:justify; background-color:purple; color:white; font-size:23px;">Edit Existing Food</div>
+                    <form class = "col-md-6" id = "form">
                     
-
-                    
-
                     </form>
                 </div>
                 <script src = "./jquery-3.4.1.js"></script>
@@ -53,7 +68,7 @@
 
                             
                     <div class="col-md-12" style = "margin-left: 450px;">
-                            <button type="submit" class="btn" style="background-color:purple; color:white;">CREATE</button>                             
+                            <button type="submit" class="btn btn-primary btn-success" style="background-color:purple; color:white;">EDIT</button>                             
                     </div>`)
                     $('form').on('submit', function(e){
                     e.preventDefault();
@@ -69,7 +84,7 @@
                         $.ajax({
                 url:"http://localhost:4000/food/"+result[0].id,
                 success:function(result){
-                    console.log(result)
+                    alert("YOU HAVE SUCCESSFULLY EDITED THIS FOOD")
                 },
                 method:"PUT",
                 data:{

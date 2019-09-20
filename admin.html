@@ -8,33 +8,27 @@
     <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
     
     <title>Food Ordering Platform</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1>WELCOME TAG</h1>
-
-    <div class="card col-md-4">
-            <div class="card-header">
-                Menu
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a href="./create.html">Create Food to Stock</a></li>
-                <li class="list-group-item"><a href="./show.html">Preview available food</a></li>
-                <li class="list-group-item"><a href="./show_all_orders.html">Show all orders</a></li>   
-            </ul>
-        </div>
+    
 
 
-
-        <div class="User">
-            <button type="submit" name="submit" class="btn"><a href="login.html">LOGOUT</a> </button>
-        </div>
+    <nav class="navbar sticky-top navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><h2>DEV/FOOD</h2></a>
+            <a class="navbar-brand" href="./create.html" style = "margin-left: 150px;">Create Food to Stock</a>
+            <a class="navbar-brand" href="./show.html">Preview available food</a>
+            <a class="navbar-brand" href="./show_all_orders.html">Show all orders</a>
+            <a class="navbar-brand" href="#"><h4>WELCOME TAG</h4></a>
+            <button type="submit" name="submit" class="btn btn-primary btn-success"><a href="login.html"style = "color: white;">LOGOUT</a></button>
+    </nav>
     
     <script src = "./jquery-3.4.1.js"></script>
     <script>
         
             let firstName = localStorage.firstName;
-            $('h1').html("Welcome" + " " + firstName);
+            $('h4').html("Welcome" + " admin" + " " + firstName);
         
     </script>
 </body>

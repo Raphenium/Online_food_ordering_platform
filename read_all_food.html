@@ -8,25 +8,25 @@
     <link rel="stylesheet" href="./css/bootstrap-grid.min.css">
     
     <title>Food Ordering Platform</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
         <nav class="navbar sticky-top navbar-dark bg-dark">
                 <a class="navbar-brand" href="#"><h2>DEV/FOOD</h2></a>
-                <a class="navbar-brand" href="./create.html" style = "margin-left: 150px;">Create Food to Stock</a>
-                <a class="navbar-brand" href="./show_all_orders.html">Show all orders</a>
-                <a class="navbar-brand" href="#"><h4>WELCOME TAG</h4></a>
+                <a class="navbar-brand" href="./read_all_food.html" style = "margin-left: 50px;">See available food</a>
+                <a class="navbar-brand" href="#"><h5>WELCOME TAG</h5></a>
                 <button type="submit" name="submit" class="btn btn-primary btn-success"><a href="login.html"style = "color: white;">LOGOUT</a></button>
         </nav>
+
+
+    
+    <script src = "./jquery-3.4.1.js"></script>
+    <script>
         
-        <script src = "./jquery-3.4.1.js"></script>
-        <script>
-            
-                let firstName = localStorage.firstName;
-                $('h4').html("Welcome" + " admin" + " " + firstName);
-            
-        </script>
+            let firstName = localStorage.firstName;
+            $('h5').html("Hi" + " " + firstName + " You can place your order here, just click on the order button");
+        
+    </script>
 
     <div>
             <table class="table table-striped m-2 p-3" id="employeesTable">
@@ -49,7 +49,7 @@
     url: "http://localhost:4000/food", success: function(result){
 
 
-
+        
       result.forEach(food =>{
           console.log(result);
           if(food.quantity > 0){
@@ -59,16 +59,15 @@
         <td>${food.food_name}</td>
         <td>${food.quantity}</td>
         <td>${food.amount}</td>
-        <td><a href="edit.html?name=${food.food_name}&quantity=${food.quantity}&amount=${food.amount}&id=${food.id}"><button type="submit" class="btn btn-primary btn-success">UPDATE</button></a></td>
-        <td><a href="order.html?name=${food.food_name}&amount=${food.amount}"><button data-id=${food.id} class="btn btn-primary btn-success">ORDER</button></a></td>
-        <td><button data-id=${food.id} class="btn btn-primary btn-danger">Delete</button></td>
+       
+        <td><a href="order.html?name=${food.food_name}&amount=${food.amount}"><button data-id=${food.id} class = "btn btn-primary btn-success">ORDER</button></a></td>
         </tr>
         `
         );
     }
       })
       //add delete function to my delete button
-      $('.btn-danger').on('click',function(e){
+      $('.del').on('click',function(e){
                                //console.log(e.target.dataset.id)
                                //confirm before deleting
                                if(confirm("Sure you want to delete food?")){

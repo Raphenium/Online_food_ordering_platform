@@ -11,11 +11,34 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>WELCOME TAG</h1>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+            
+        
+                <nav class="navbar sticky-top navbar-dark bg-dark">
+                        <a class="navbar-brand" href="#"><h2>DEV/FOOD</h2></a>
+                        <a class="navbar-brand" href="./show.html">Preview available food</a>
+                        <a class="navbar-brand" href="./show_all_orders.html">Show all orders</a>
+                        <a class="navbar-brand" href="#"><h5>WELCOME TAG</h5></a>
+                        <button type="submit" name="submit" class="btn btn-primary btn-success"><a href="login.html"style = "color: white;">LOGOUT</a></button>
+                </nav>
+        
+            
+            <script src = "./jquery-3.4.1.js"></script>
+            <script>
+                
+                    let firstName = localStorage.firstName;
+                    $('h5').html("Hi" + " " + firstName + " You can create your order here, just click on the order button");
+                
+            </script>
+
+
+
 
             
-                    <div class="card-header col-md-8" style="margin-left:228px; text-align:justify; background-color:purple; color:white; font-size:23px;">Order for Food</div>
-                    <form class = "col-md-8" id = "form">
+                    <div class="card-header col-md-6" style="margin-left:340px; text-align:justify; background-color:purple; color:white; font-size:23px;">Order for Food</div>
+                    <form class = "col-md-6" id = "form">
                     
 
                     
@@ -43,7 +66,7 @@
                         </div>
     
                         <div style="margin-bottom:14px; color:black; font-size:18px;">
-                            <label for="newQuantity" class="col-md-12 control-label" name="newQuantity">Quantity</label>
+                            <label for="newQuantity" class="col-md-12 control-label" name="newQuantity">Order Quantity</label>
     
                             <div class="col-md-12">
                                 <input type="number" class="form-control" name="newQuantity" id = "newQuantity">
@@ -63,13 +86,6 @@
                             <input type="text" class="form-control" id="amount" name="amount" value="${urlParams.get('amount')}" >
                             </div>
                         </div>
-
-                        <div style="margin-bottom:14px; color:black; font-size:18px;">
-                            <label for="total_amount" class="col-md-12 control-label" name="total_amount">Total Amount</label>
-                            <div class="col-md-12">
-                            <input type="text" class="form-control" id="total_amount" name="total_amount">
-                            </div>
-                    </div>
 
                             
                     <div class="col-md-12" style = "margin-left: 450px;">
@@ -121,26 +137,26 @@
                 method:"GET"
                 })
    
-//         $.ajax({
-// url:"http://localhost:4000/order",
-// success:function(res){
-//     console.log(res)
-//     let array = [name, newQuantity, total_amount]
-//     alert("Order Successful! you have ordered " + array[1] + " pounds of " + array[0] +" and your total amount is " + array[2] + " Naira");
-// },
-// method:"POST",
-// data:{
+        $.ajax({
+url:"http://localhost:4000/order",
+success:function(res){
+    console.log(res)
+    let array = [name, newQuantity, total_amount]
+    alert("Order Successful! you have ordered " + array[1] + " pounds of " + array[0] +" and your total amount is " + array[2] + " Naira");
+},
+method:"POST",
+data:{
     
-//     food_name:name,
-//       user_email,
-//       total_price:total_amount,
-//       newQuantity,
-//       address,
-//       firstName,
-//       lastName
+    food_name:name,
+      user_email,
+      total_price:total_amount,
+      newQuantity,
+      address,
+      firstName,
+      lastName
     
-// },
-//     });
+},
+    });
     //add Hi Username, thankyou for placing an order we will deliver your order shortly.
 
    

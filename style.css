@@ -8,8 +8,8 @@ body {
 	background:  #F8F8FF;
 }
 .header {
-	width: 60%;
-	margin: 30px auto auto;
+	width: 40%;
+	margin: 10px auto auto;
 	background: #5F9EA0;
 	color: white;
 	padding: 20px;
@@ -41,7 +41,7 @@ margin: 10px 0px 10px 0px;
 	padding: 5px 10px;
 	border: 1px solid grey;
 }
-.btn {
+/* .btn {
 	padding: 5px 3px;
 	background: green;
 	border-radius: 5px;
@@ -49,7 +49,7 @@ margin: 10px 0px 10px 0px;
 	border: none;
 	color: white;
 	margin: 10px 0px 0px 330px;
-}
+} */
 
 
 
